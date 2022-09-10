@@ -25,24 +25,24 @@ const wishlistEndpoint = async (ctx)=>{
         }
         // Add an item to the wishlist
         if (req.method === "POST") {
-            const body = {
+            const body1 = {
                 ...req.body,
                 customerToken
             };
             return await handlers["addItem"]({
                 ...ctx,
-                body
+                body: body1
             });
         }
         // Remove an item from the wishlist
         if (req.method === "DELETE") {
-            const body = {
+            const body2 = {
                 ...req.body,
                 customerToken
             };
             return await handlers["removeItem"]({
                 ...ctx,
-                body
+                body: body2
             });
         }
     } catch (error) {

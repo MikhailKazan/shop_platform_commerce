@@ -25,35 +25,35 @@ const cartEndpoint = async (ctx)=>{
         }
         // Create or add an item to the cart
         if (req.method === "POST") {
-            const body = {
+            const body1 = {
                 ...req.body,
                 cartId
             };
             return await handlers["addItem"]({
                 ...ctx,
-                body
+                body: body1
             });
         }
         // Update item in cart
         if (req.method === "PUT") {
-            const body = {
+            const body2 = {
                 ...req.body,
                 cartId
             };
             return await handlers["updateItem"]({
                 ...ctx,
-                body
+                body: body2
             });
         }
         // Remove an item from the cart
         if (req.method === "DELETE") {
-            const body = {
+            const body3 = {
                 ...req.body,
                 cartId
             };
             return await handlers["removeItem"]({
                 ...ctx,
-                body
+                body: body3
             });
         }
     } catch (error) {

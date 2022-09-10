@@ -26,35 +26,35 @@ const customerCardEndpoint = async (ctx)=>{
         }
         // Create or add an item to customer cards
         if (req.method === "POST") {
-            const body = {
+            const body1 = {
                 ...req.body,
                 cartId
             };
             return await handlers["addItem"]({
                 ...ctx,
-                body
+                body: body1
             });
         }
         // Update item in customer cards
         if (req.method === "PUT") {
-            const body = {
+            const body2 = {
                 ...req.body,
                 cartId
             };
             return await handlers["updateItem"]({
                 ...ctx,
-                body
+                body: body2
             });
         }
         // Remove an item from customer cards
         if (req.method === "DELETE") {
-            const body = {
+            const body3 = {
                 ...req.body,
                 cartId
             };
             return await handlers["removeItem"]({
                 ...ctx,
-                body
+                body: body3
             });
         }
     } catch (error) {

@@ -24,13 +24,13 @@ const checkoutEndpoint = async (ctx)=>{
         }
         // Create checkout
         if (req.method === "POST" && handlers["submitCheckout"]) {
-            const body = {
+            const body1 = {
                 ...req.body,
                 cartId
             };
             return await handlers["submitCheckout"]({
                 ...ctx,
-                body
+                body: body1
             });
         }
     } catch (error) {

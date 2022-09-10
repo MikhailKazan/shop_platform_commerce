@@ -26,35 +26,35 @@ const customerShippingEndpoint = async (ctx)=>{
         }
         // Create or add an item to customer addresses list
         if (req.method === "POST") {
-            const body = {
+            const body1 = {
                 ...req.body,
                 cartId
             };
             return await handlers["addItem"]({
                 ...ctx,
-                body
+                body: body1
             });
         }
         // Update item in customer addresses list
         if (req.method === "PUT") {
-            const body = {
+            const body2 = {
                 ...req.body,
                 cartId
             };
             return await handlers["updateItem"]({
                 ...ctx,
-                body
+                body: body2
             });
         }
         // Remove an item from customer addresses list
         if (req.method === "DELETE") {
-            const body = {
+            const body3 = {
                 ...req.body,
                 cartId
             };
             return await handlers["removeItem"]({
                 ...ctx,
-                body
+                body: body3
             });
         }
     } catch (error) {
